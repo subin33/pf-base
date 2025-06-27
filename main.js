@@ -272,6 +272,7 @@
       openNav();
     });
   }
+
   // 캔버스에 빗방울 애니메이션 처리
   function drawRainCanvas() {
     const canvas = document.getElementById("rain-canvas");
@@ -297,7 +298,7 @@
       drops.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        speed: Math.random() * 4 + 2,
+        speed: Math.random() * 5 + 2,
         length: Math.random() * 20 + 5,
       });
     }
@@ -409,45 +410,7 @@
       });
     });
   }
-
-  // 무한 캐러셀 자동 스크롤
-  function animateCarousel() {
-    const carousel = document.querySelector(".carousel-inner");
-    if (!carousel) return;
-
-    const totalWidth = carousel.scrollWidth / 2;
-    gsap.to(carousel, {
-      x: `-=${totalWidth}`,
-      duration: 20,
-      ease: "linear",
-      repeat: -1,
-      modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth),
-      },
-    });
-  }
-  // ScrollTrigger 로 카드 fade-in
-  function initScrollFadeIn() {
-    gsap.utils.toArray("#project-carousel .snap-center").forEach((card) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0.5, scale: 0.9 },
-        {
-          opacity: 1,
-          scale: 1,
-          scrollTrigger: {
-            trigger: card,
-            start: "left center",
-            end: "right center",
-            scrub: true,
-            containerAnimation: ScrollTrigger.getById("carouselAnim"),
-          },
-          ease: "power2.out",
-        }
-      );
-    });
-  }
-  // 라이브 링크 화살표 호버
+  // 링크 화살표 호버
   function animateLinkArrow() {
     document.querySelectorAll(".live-link").forEach((link) => {
       const arrow = link.querySelector(".arrow-icon");
@@ -457,18 +420,6 @@
       link.addEventListener("mouseleave", () => {
         gsap.to(arrow, { x: 0, duration: 0.3, ease: "power2.inOut" });
       });
-    });
-  }
-  // Dawn-mobile 회전 애니메이션
-  function rotateDawnMobile() {
-    const dawnMobile = document.querySelector(".dawn-mobile");
-    if (!dawnMobile) return;
-    gsap.to(dawnMobile, {
-      rotation: "+=360",
-      duration: 6,
-      repeat: -1,
-      ease: "none",
-      transformOrigin: "50% 50%",
     });
   }
   // 햄버거 메뉴 토글
@@ -512,27 +463,7 @@
       });
     });
   }
-  // 슬라이드 내부 요소 ScrollTrigger 애니
-  function initSlideAnim() {
-    gsap.utils.toArray(".swiper-slide").forEach((slide) => {
-      gsap.from(slide, {
-        scrollTrigger: { trigger: slide, start: "top 80%", toggleActions: "play none none none" },
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power3.out",
-      });
-      const kids = slide.querySelectorAll("h2, p, .live-link, .bg-orange, .bg-purple, .bg-lightpurple, .bg-yellow");
-      gsap.from(kids, {
-        scrollTrigger: { trigger: slide, start: "top 85%" },
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        ease: "power2.out",
-        stagger: 0.1,
-      });
-    });
-  }
+
   // email
   function initContactForm() {
     emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
@@ -607,14 +538,10 @@
     customCursor();
     typingEffect();
     initCtaHover();
-    animateCarousel();
-    initScrollFadeIn();
     animateLinkArrow();
-    rotateDawnMobile();
     initMobileMenu();
     initSmoothScroll();
     initTimeline();
-    initSlideAnim();
     // initContactForm();
   }
 
