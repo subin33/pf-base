@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="icon" type="image/x-icon" href="./imgs/favicon.ico">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Hello"/> 
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Hello"/>
+    <meta property="og:description" content="Hello"/> 
+    <meta property="og:image" content="/imgs/og-img.png" />
+    <meta property="og:url" content="https://2025-subin.netlify.app/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <title>2025 Hello</title>
+  </head>
+  <body id="body-container">
+    <div class="preloader font-bold">Hello</div>
+    <div id="other-nav-toggle" class="hoverable">
+      <svg width="37" height="34" viewBox="0 0 37 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.8984 1.77973C1.38555 5.33248 -2.3249 9.09225 1.31902 20.4928C6.73855 32.9135 11.8996 35.8776 25.4601 32.9683C37.3424 30.3009 37.1934 24.9696 36.9281 15.4819L36.9271 15.4433C37.0623 -1.8152 29.8476 -1.54363 14.8984 1.77973Z" fill="#070707"/>
+          <rect x="8" y="12" width="22" height="2" rx="1" fill="white"/>
+          <rect x="8" y="19" width="22" height="2" rx="1" fill="white"/>
+      </svg>  
+    </div>
+
+    <div>
+      <!-- Custom Cursor -->
+      <div class="custom-cursor pc">
+        <div class="cursor-ball cursor-ball-big">
+          <svg height="30" width="30">
+            <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+          </svg>
+        </div>
+        <div class="cursor-ball cursor-ball-small">
+          <svg height="10" width="10">
+            <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+          </svg>
+        </div>
+        <img 
+          src="" 
+          alt="preview" 
+          class="cursor-img" 
+        />
+      </div>
+      <!-- End custom cursor -->
+
+      <!-- Overlay Navigation -->
+      <div class="overlay-nav">
+        <div class="overlay-nav-header">
+          <p class="overlay-nav-label pc">Menu</p>
+          <div class="overlay-nav-username">
+              <p class="nav-username-text">Hello</p>
+              <div>
+                <img src="/svgs/logo-icon.svg" alt="logo-icon" width="28" height="26" class="overlay-nav-svg" /> 
+              </div>
+          </div>
+      
+          <div class="nav-close-btn hoverable" id="nav-close">
+            <div>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.41418" width="20" height="2" rx="1" transform="rotate(45 1.41418 0)" fill="white"/>
+                <rect y="14.1421" width="20" height="2" rx="1" transform="rotate(-45 0 14.1421)" fill="white"/>
+              </svg>                                    
+            </div>
+          </div>
+        </div>
+
+        <section class="overlay-nav-content" id="overlay-nav-content">
+          <p class="overlay-nav-text">What are you looking for?</p>
+          <div class="nav-divider"></div>
+          <ul class="nav-links">
+            <a href="#about-me" id="nav-item" class="nav-item-link">
+              <div class="nav-link-block hoverable">
+                  <li class="nav-link-label hover-link ">About Me</li>
+                  <div>
+                    <svg width="51" height="16" viewBox="0 0 51 16" xmlns="http://www.w3.org/2000/svg">
+                        <path  fill="black" d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z"/>
+                    </svg>    
+                  </div>
+              </div>
+            </a>
+            <a href="#experience" id="nav-item" class="nav-item-link">
+              <div class="nav-link-block text-top-md hoverable">
+                  <li class="nav-link-label hover-link">Experience & Certifications</li>
+                  <div>
+                    <svg width="51" height="16" viewBox="0 0 51 16" xmlns="http://www.w3.org/2000/svg">
+                        <path  fill="black" d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z"/>
+                    </svg>    
+                  </div>
+              </div>
+            </a>
+
+            <a href="#my-project" id="nav-item" class="nav-item-link">
+              <div class="nav-link-block text-top-md hoverable">
+                  <li class="nav-link-label hover-link ">Project</li>
+                  <div>
+                    <svg width="51" height="16" viewBox="0 0 51 16" xmlns="http://www.w3.org/2000/svg">
+                        <path  fill="black" d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z"/>
+                    </svg>    
+                  </div>
+              </div>
+            </a>
+
+            <a href="#mini-project" id="nav-item" class="nav-item-link">
+                <div class="nav-link-block text-top-md hoverable">
+                    <li class="nav-link-label hover-link">Game & Mini Project</li>
+                    <div>
+                      <svg width="51" height="16" viewBox="0 0 51 16" xmlns="http://www.w3.org/2000/svg">
+                          <path  fill="black" d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z"/>
+                      </svg>    
+                    </div>
+                </div>
+            </a>
+
+            <a href="#contact-me" id="nav-item" class="nav-item-link">
+                <div class="nav-link-block text-top-md hoverable">
+                  <li class="nav-link-label hover-link">Contact</li>
+                  <div>
+                    <svg width="51" height="16" viewBox="0 0 51 16" xmlns="http://www.w3.org/2000/svg">
+                        <path  fill="black" d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z"/>
+                    </svg>    
+                  </div>
+                </div>
+            </a>
+          </ul>
+          <div class="nav-divider text-top-md"></div>
+
+          <div class="nav-socials">
+            <a href="#" target="_blank" class="hoverable"><img width="30" src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub" /></a>
+            <a href="#" target="_blank" class="hoverable"><img width="30" src="https://img.icons8.com/ios-filled/50/ffffff/notion.png" alt="Notion"/></a>
+            <a href="#" target="_blank" class="hoverable"><img width="30" src="https://img.icons8.com/48/ffffff/blogger.png" alt="Blogger" /></a>
+            <a href="#" target="_blank" class="hoverable"><img width="30" src="https://img.icons8.com/windows/32/ffffff/parse-from-clipboard.png" alt="Resume" /></a>
+            <a href="#" target="_blank" class="hoverable pc">
+              <img width="30" src="https://img.icons8.com/ios-filled/50/ffffff/source-code.png" alt="Source Code" />
+            </a>
+          </div>
+
+        </section>
+      </div> 
+      <!-- End Overlay Navigation -->
+
+      <nav id="navbar" class="main-nav">
+        <div class="flex items-center gap-5">
+          <div class="nav-container">
+              <p class="nav-username">Hello</p>
+              <div>
+                <img src="/svgs/logo-icon.svg" alt="logo-icon" width="28" height="26" /> 
+              </div>
+          </div>
+        </div>
+        <div class="nav-toggle-btn hoverable" id="nav-toggle">
+          <div>
+            <svg width="29" height="8" viewBox="0 0 29 8" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <rect y="6" width="29" height="2" rx="1"/>
+              <rect width="29" height="2" rx="1"/>
+              <rect y="6" width="29" height="2" rx="1"/>
+              <rect width="29" height="2" rx="1"/>
+            </svg> 
+          </div>
+        </div>
+      </nav>
+
+      <div id="divider-info-1" class="divider text-bottom"></div>
+      <div id="status-bar" class="status-bar">
+        <p class="status-item">
+          >> Former 
+          <br>
+          <span class="status-subtext">The Dev Diary</span> 
+        </p>
+        <p class="status-item status-center">
+          >> Actively Learning <<
+          <br>
+          <span class="status-subtext"> v2025</span> 
+        </p>
+        <p class="status-item status-right">
+          Open to Work <<
+          <br>
+          <span class="status-subtext">Contact me</span> 
+        </p>
+      </div>
+      <div id="divider-info-2" class="divider text-top"></div>
+
+      <div class="container">
+        <header id="about-me" class="about-section" >
+          <div class="about-header">
+            <p class="index-text">01</p>
+            <h2 class="title-text">About me</h2>
+              <div class="about-profile">
+                <img src="./imgs/about.jpg" alt="About" class="about-img" />
+                <div class="about-details">
+                  <p class="about-intro">
+                    I'm a
+                    <span class="wordData" data-wait="1600" data-words='["UI designer","web developer"]'></span>
+                  </p>
+                  <p class="about-text text-top">
+                    &#x2713
+                    name
+                  </p>
+                  <p class="about-text">
+                    &#x2713
+                    DOB 
+                  </p>
+                  <p class="about-text ">
+                    &#x2713
+                    Address 
+                  </p>
+                  <p class="about-text">
+                    &#x2713
+                    Phone Number
+                  </p>
+                  <p class="about-text">
+                    &#x2713
+                    Email
+                  </p>
+                  <div class="about-links">
+                    <a href="#" target="_blank">
+                      <button class="about-btn hoverable">
+                        <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="github"/>
+                        <span class="link-label hover-link pc">GitHub</span>
+                      </button>
+                    </a>
+                    <a href="#" target="_blank">
+                      <button class="about-btn hoverable">
+                        <img width="20" height="20" src="https://img.icons8.com/ios/50/notion.png" alt="notion"/>
+                        <span class="link-label hover-link pc">Notion</span>
+                      </button>
+                    </a>
+                      <a href="#" target="_blank">
+                      <button class="about-btn hoverable">
+                        <img width="20" height="20" src="https://img.icons8.com/badges/48/blogger.png" alt="blogger"/>
+                        <span class="link-label hover-link pc">Blog</span>
+                      </button>
+                    </a>
+                    <a href="#" target="_blank">
+                      <button class="about-btn hoverable">
+                        <img width="20" height="20" src="https://img.icons8.com/windows/32/parse-from-clipboard.png" alt="parse-from-clipboard"/>
+                        <span class="link-label hover-link pc">Resume</span>
+                      </button>
+                    </a>
+                    <a href="#" target="_blank" class="pc">
+                      <button class="about-btn hoverable">
+                        <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/source-code.png" alt="source-code"/>
+                        <span class="link-label hover-link">Code</span>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            <div id="about-cta" class="about-cta-group">
+              <a href="#contact-me" class="hoverable text-top-lg">
+                <div  class="about-cta-box hover-link">
+                    <p class="about-cta-text">Let's talk</p>
+                    <div>
+                      <svg width="50" height="50" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle id="cta-circle" cx="42.5" cy="42.5" r="42" stroke="#070707"/>
+                          <path class="path" fill="#070707" d="M41.3165 54.7307C41.7074 55.1209 42.3405 55.1203 42.7307 54.7294L49.0888 48.3596C49.479 47.9687 49.4784 47.3356 49.0875 46.9454C48.6966 46.5552 48.0635 46.5558 47.6733 46.9467L42.0217 52.6087L36.3596 46.9571C35.9687 46.5669 35.3356 46.5675 34.9454 46.9584C34.5552 47.3493 34.5558 47.9824 34.9467 48.3726L41.3165 54.7307ZM41 29.0009L41.0229 54.0239L43.0229 54.022L43 28.9991L41 29.0009Z"/>
+                      </svg>    
+                    </div>
+                </div>
+              </a>
+              <a href="#my-project" class="hoverable text-top-lg">
+                <div class="about-cta-box hover-link">
+                    <p class="grotesk-font">my project <span class="about-icon">&#x21b4;</span></p>
+                </div>
+              </a>
+            </div>  
+          </div>
+          <div class="canvas-container">
+            <canvas id="rain-canvas"></canvas>
+          </div>
+        </header>       
+          
+        <div id="section-container">
+          <section class="about-content">
+            <div class="about-cards">
+              <div class="about-bio">
+                <p class="about-card-title">
+                  안녕하세요, 프론트엔드 개발자 name 입니다.
+                </p>
+                <div class="services-border"></div>
+                <p class="about-card-text text-top">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, saepe praesentium excepturi numquam fugiat totam, deleniti quasi natus illo non quibusdam. Aspernatur quae, perspiciatis sed nihil molestiae ut nostrum in.
+                </p>
+                <p class="about-card-text text-top">
+                  &#x2713
+                  Lorem ipsum dolor sit amet.
+                </p>
+                <p class="about-card-text">
+                  &#x2713
+                  Lorem ipsum dolor sit amet.
+                </p>
+                <p class="about-card-text">
+                  &#x2713
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+              <div class="about-resources">
+                <p class="about-card-title">
+                   Materials
+                </p>
+                <div class="services-border"></div>
+                <p class="about-card-text text-top">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi perferendis quod voluptatem id. Commodi, voluptate ratione.
+                  <br>
+                  <br>
+                </p>
+                <p class="about-card-text hoverable">
+                  <a href="#" target="_blank" class="hover-link">
+                    &#x2713 Lorem &rarr;
+                  </a>
+                </p>
+                <p class="about-card-text hoverable">
+                  <a href="#" target="_blank" class="hover-link">
+                    &#x2713 Lorem &rarr;
+                  </a>
+                </p> 
+                <p class="about-card-text hoverable">
+                  <a href="#" target="_blank" class="hover-link">
+                    &#x2713 Lorem &rarr;
+                  </a>
+                </p>  
+                <p class="about-card-text hoverable">
+                  <a href="#" target="_blank" class="hover-link">
+                    &#x2713 Lorem &rarr;
+                  </a>
+                </p> 
+              </div>
+              <div class="about-skills">
+                <p class="about-middle-title">
+                  Tech Stack
+                </p>
+                <div class="services-border"></div>
+                <div class="skill-list text-top">
+                  <!-- 왼쪽 열 -->
+                  <div>
+                    <p>&#x2713 HTML</p>
+                    <p >&#x2713 CSS</p>
+                    <p>&#x2713 JavaScript</p>
+                    <p>&#x2713 Markdown</p>
+                    <p>&#x2713 Vue.js</p>
+                    <p>&#x2713 Axios</p>
+                  </div>
+                  <!-- 오른쪽 열 -->
+                  <div>
+                    <p class="text-sm mb-1">&#x2713 jQuery</p>
+                    <p class="text-sm mb-1">&#x2713 React.js</p>
+                    <p class="text-sm mb-1">&#x2713 Node.js</p>
+                    <p class="text-sm">&#x2713 Express</p>
+                  </div>
+                </div>
+              </div>
+              <div class="about-learning">
+                <p class="about-middle-title">
+                  Currently learning
+                </p>
+                <div class="services-border"></div>
+                <p class="about-card-text text-top">
+                  &#x2713
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <p class="about-card-text">
+                  &#x2713
+                  Lorem ipsum dolor, sit amet consectetur adipisicing.
+                </p>
+                <p class="about-card-text">
+                  &#x2713
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </p>
+              </div>
+              <div class="about-certifications">
+                <p class="about-middle-title">Certifications</p>
+                <div class="services-border"></div>
+                <div class="certification-item">
+                  <p class="about-card-text">&#x2713 정보처리산업기사</p>
+                  <p class="cert-subtext">한국산업인력공단 · 2025.06.13</p>
+                </div>
+
+                <div class="certification-item">
+                  <p class="about-card-text">&#x2713 SQLD</p>
+                  <p class="cert-subtext">한국데이터산업진흥원 · 2024.04.05</p>
+                </div>
+              </div>
+            </div>
+            <a href="#contact-me">
+              <button class="contact-btn hoverable">
+                <div>Contact me &#x21b4;</div>
+              </button>
+            </a>
+          </section>
+          <!-- Desktop Experience and Education -->
+          <section id="experience-desktop" class="experience-content">
+            <p class="index-text">02</p>
+            <h2 class="title-text">Education · Experience · Certifications</h2>
+            <h2 class="experience-title" >Experience & Certifications</h2>
+
+            <div class="experience-timeline">
+              <div class="timeline-divider"></div>
+              <div class="timeline-row">
+                <div class="timeline-col text-right">
+                  <div class="timeline-item">
+                    <h4 class="timeline-title">Education</h4>
+                    <p class="timeline-subtext">Education Details</p>
+                    <p class="timeline-period">Education Period</p>
+                  </div>
+                </div>
+
+                <!-- education -->
+                <div class="timeline-spacing">
+                  <div class="timeline-item">
+                    <h4 class="timeline-label">Educational Activities</h4>
+                    <ul class="timeline-list">
+                      <li>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ab odio atque excepturi laudantium tenetur voluptas? Quos explicabo, architecto corrupti consectetur provident quidem dolore deleniti facilis nisi est magnam aliquam tenetur, ea incidunt quam quia voluptatibus reiciendis veritatis ratione dolorem!</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- experience -->
+                <div class="timeline-row">
+                  <div class="timeline-col text-right">
+                    <div class="timeline-item">
+                      <h4 class="timeline-title">Experience</h4>
+                      <p class="timeline-subtext">Experience Details</p>
+                      <p class="timeline-period">Experience Period</p>
+                    </div>
+                  </div>
+                  <div class="timeline-spacing">
+                    <div class="timeline-item">
+                      <h4 class="timeline-label">Professional Experience</h4>
+                      <ul class="timeline-list">
+                        <li>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis suscipit expedita recusandae harum, corrupti tempora perspiciatis unde in eaque, autem, error eligendi aliquid nobis totam. Esse repellat molestias dignissimos vero explicabo quas suscipit possimus, quis ea porro aperiam laudantium in facilis est distinctio corrupti neque alias officiis doloremque quam laborum nihil! Repellendus nostrum aut libero deserunt eligendi facilis sint nulla assumenda nam non vel, dignissimos mollitia, quaerat repudiandae labore nihil fuga maiores odit officiis debitis quo cupiditate consequatur obcaecati. Consequuntur amet, voluptates dolores sit labore maiores explicabo quos, corrupti nihil deleniti eius. Ea sapiente odio repellendus optio distinctio, eos quisquam aut amet consequatur, similique minima earum! Pariatur nulla rerum quos doloribus enim. Adipisci, illum sit explicabo animi atque laboriosam amet esse! At dolores repellat alias aliquam, ratione unde, pariatur consectetur placeat harum, eum assumenda ut itaque sapiente obcaecati vel exercitationem velit. Consequuntur quia commodi placeat molestiae quae quo velit laborum harum fugit ipsa temporibus sapiente recusandae maxime quis necessitatibus dolorum esse eveniet, praesentium earum tempore numquam voluptatum? Et nulla quam, molestias ratione mollitia odio reiciendis doloribus iusto cum, sequi ducimus, autem dolores porro id sint? Rem cupiditate soluta alias, tenetur neque quia vero odio, voluptatibus eum quasi sunt? Deleniti, sed. Modi, fugiat exercitationem, maiores hic suscipit ducimus quo voluptatum accusamus aliquid maxime est omnis perferendis totam. Libero fuga voluptates commodi, quasi accusantium quibusdam consequatur autem excepturi aliquid, magnam suscipit dolorem hic ipsum et assumenda ad impedit quam vero. Nulla sit nostrum iste. Enim eaque esse repudiandae, at omnis quo, sint, ratione earum inventore maxime voluptas autem dignissimos ducimus tenetur amet quos officiis consequuntur impedit? Perspiciatis commodi fuga repudiandae, tempore, rerum tenetur eos ipsa tempora voluptate quae optio nihil nisi aliquid neque doloremque praesentium? Vero omnis doloremque assumenda, corrupti beatae perferendis, autem fuga quos et, tempora eius itaque quibusdam quaerat laborum.</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- certifications -->
+                <div></div>
+                <div class="timeline-spacing">
+                  <div class="timeline-item">
+                    <h4 class="timeline-label">Certifications</h4>
+                    <ul class="timeline-list">
+                      <li>
+                        <p>Lorem, ipsum dolor.</p>
+                      </li>
+                      <li>
+                        <p>Lorem ipsum dolor sit.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Mobile Experience -->
+          <section class="experience-mobile" id="experience-mobile">
+            <p class="index-text">02</p>
+            <h2 class="title-text">Education · Experience · Certifications</h2>
+            <h2 class="experience-mobile-title">Experience <br>&<br> Certifications</h2>
+            <div class="timeline-spacing text-lef">
+              <div class="timeline-item">
+                <h4 class="timeline-title">Experience</h4>
+                <p class="timeline-subtext">Experience Details</p>
+                <p class="timeline-period">Experience Period</p>
+                <ul class="timeline-list">
+                  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae ullam perferendis delectus, omnis nemo saepe nam! Voluptatum ad, atque dignissimos, velit nihil sunt dolore quaerat, nam suscipit nemo quod obcaecati?</li>
+                </ul>
+              </div>
+
+              <div class="timeline-item">
+                <h4 class="timeline-title">Education</h4>
+                <p class="timeline-period">Education Period</p>
+                  <ul class="timeline-list">
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, libero.</li>
+                  </ul>
+              </div>
+
+              <div class="timeline-item">
+                <h4 class="timeline-title">Certifications</h4>
+                <ul class="timeline-list">
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, dolorem!
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <div id="divider-info-3" class="divider-2 text-bottom"></div>
+            <div id="status-bar" class="status-bar-2">
+              <p class="status-item">
+                >> Current favorite framework
+                <br>
+                <span class="status-subtext">Vue.js</span> 
+              </p>
+              <p class="status-item status-center">
+                >> Number of projects completed <<
+                <br>
+                <span class="status-subtext">x14</span> 
+              </p>
+              <p class="status-item status-right">
+                Currently passionate about <<
+                <br>
+                <span class="status-subtext">Animation</span> 
+              </p>
+            </div>
+          <div id="divider-info-4" class="divider-2 text-top"></div>
+
+          <!-- Project Section -->
+          <section class="project-section">
+            <p class="index-text" id="my-project">03</p>
+            <h5 class="project-title">Project <sup>(x4)</sup></h5>
+            <div id="project-1" class="project-item hoverable">
+              <p class="project-subtext">project-1</p>
+              <a href="#" target="_blank" role="Link to the live site">
+                <button class="hoverable project-btn">
+                  <div data-image="/imgs/albait-preview.png">See live site 	&rarr;</div>
+                </button>
+              </a>
+              <p class="text-top">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vel ipsum harum facilis facere tempora illum, illo doloremque dolorum quis nam beatae reprehenderit iste enim explicabo saepe, voluptatem dolor maxime magnam molestiae laudantium alias ea. 
+              </p>
+              <div class="project-stack-list">
+                <p class="project-stack">
+                  Vue3 
+                </p>
+                <p class="project-stack">
+                  Supabase
+                </p>
+                <p class="project-stack">
+                  JavaScript
+                </p>
+                <p class="project-stack">
+                  SCSS
+                </p>
+              </div>
+            </div>
+
+            <div id="project-2" class="project-item hoverable">
+              <p class="project-subtext">project-2</p>
+              <a href="#" target="_blank" role="Link to the live site">
+                <button class="hoverable project-btn">
+                  <div data-image="/imgs/wine-bliss-preview.png">See live site 	&rarr;
+                  </div>
+                </button>
+              </a>
+              <p class="text-top">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta necessitatibus ea eaque libero ipsum quos, provident pariatur optio debitis recusandae harum architecto alias magni exercitationem. Sunt rerum eos corporis ipsa facilis ullam eligendi laboriosam aliquam repellat sequi, cumque beatae doloremque.
+              </p>
+              <div class="project-stack-list">
+                <p class="project-stack">
+                  HTML
+                </p>
+                <p class="project-stack">
+                  CSS
+                </p>
+                <p class="project-stack">
+                  jQuery
+                </p>
+              </div>
+            </div>
+
+            <div id="project-3" class="project-item hoverable">
+              <p class="project-subtext">project-3</p>
+              <a href="#" target="_blank" role="Link to the live site">
+                <button class="hoverable project-btn">
+                  <div data-image="/imgs/space-site-preview.png" data-image-width="23rem">See live site &rarr;</div>
+                </button>
+              </a>
+              <p class="text-top">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt similique quidem dicta eius eos. Nam sit, architecto labore libero suscipit veniam facilis quibusdam culpa a quis veritatis atque accusantium asperiores odit exercitationem cum placeat magnam doloribus quam corporis voluptate. Est quisquam nulla ducimus similique accusantium.
+              </p>
+              <div class="project-stack-list">
+                <p class="project-stack">
+                  HTML
+                </p>
+                <p class="project-stack">
+                  CSS
+                </p>
+                <p class="project-stack">
+                  JavaScript
+                </p>
+              </div>
+            </div>
+
+            <div id="project-4" class="project-item hoverable">
+                <p class="project-subtext">project-4</p>
+                <a href="#" target="_blank" role="Link to the live site">
+                 <button class="hoverable project-btn">
+                    <div data-image="/imgs/motorcycle-preview.png" data-image-width="23rem">See live site 	&rarr;</div>
+                  </button>
+                </a>
+                <p class="text-top">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum illo consequatur fugit voluptatum, placeat dicta molestiae accusantium. Ratione vero nemo voluptates aperiam rerum, odio praesentium? Atque voluptatibus cum animi dolores dolor. Necessitatibus quaerat cupiditate maiores, voluptatum dolor nisi optio aspernatur?
+                </p>
+                <div class="project-stack-list">
+                  <p class="project-stack">
+                    Vue2
+                  </p>
+                </div>
+            </div>
+            <div id="project-5" class="project-item hoverable">
+            <p class="project-subtext">project-5</p>
+            <a href="#" target="_blank" role="Link to the live site">
+              <button class="hoverable project-btn">
+                <div data-image="/imgs/preview.png" data-image-width="23rem">See live site 	&rarr;</div>
+              </button>
+            </a>
+            <p class="text-top">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum consectetur quas necessitatibus eveniet optio quaerat! Dolorem adipisci deleniti distinctio quibusdam. Laborum, culpa veritatis voluptatem consequatur excepturi, necessitatibus ea ut magnam quibusdam doloremque labore enim inventore ullam quia deleniti illo incidunt?
+            </p>
+            <div class="project-stack-list">
+              <p class="project-stack">
+                HTML
+              </p>
+              <p class="project-stack">
+                CSS
+              </p>
+              <p class="project-stack">
+                JavaScript
+              </p>
+            </div>
+       
+          </section>
+
+          <!-- Game & Mini Project Section -->
+          <section class="mini-project-section" id="mini-project">
+            <p class="index-text">04</p>
+            <h4 class="project-title">
+              Game & Mini Project <sup>(x6)</sup>
+            </h4>
+            <p class="text-top">
+            A collection of mini projects.
+            </p>
+
+            <div class="mini-project-list">
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-2.jpg"></a>
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-3.jpg"></a>
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-5.jpg"></a>
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-4.jpg"></a>
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-6.jpg"></a>
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-7.jpg"></a>
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-1.jpg"></a>
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-8.jpg"></a>
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-9.jpg"></a>
+              <a href="#" target="_blank" class="hoverable"><img class="mini-project" src="./imgs/mini-project-10.jpg"></a>
+            </div>
+          </section>
+
+
+          <section class="contact-section">
+            <p class="index-text" id="contact-me">05</p>
+            <h6 class="project-title">Contact me</h6>
+
+            <form class="contact-form">
+              <div class="name-from">
+                <p class="grotesk-font">Your name <sup>*</sup></p>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  class="contact-input"
+                  aria-required="true"
+                />
+              </div>
+
+              <p class="grotesk-font text-top">Your email <sup>*</sup></p>
+              <div class="email-from">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder=" "  
+                  aria-required="true"
+                  pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+[.][A-Za-z]{2,}"
+                  title="유효한 이메일 주소를 입력해 주세요. ex) user@example.com"
+                  class="contact-input email-input"
+                />
+
+                <div class="email-icon">
+                  <svg
+                    aria-hidden="true"
+                    class="email-icon-svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                  </svg>
+                </div>
+              </div>
+
+
+              <p class="grotesk-font text-top">Your message <sup>*</sup></p>
+              <textarea
+                name="message"
+                required
+                aria-required="true"
+                rows="4"
+                class="contact-input"
+              ></textarea>
+
+              <button
+                type="submit"
+                class="contact-send hoverable"
+              >
+                Send message
+              </button>
+            </form>
+          </section>
+
+        </div>
+
+
+      </div>
+
+      <footer
+        class="footer-section">
+        <div class="footer-content">
+          <div>
+            <div class="footer-logo">
+              <p class="footer-username">Hello</p>
+                <div>
+                  <img src="/svgs/logo-icon.svg" alt="logo-icon" width="28" height="26" /> 
+                </div>
+            </div>
+            <p class="text-top">
+              Building better experiences, one project at a time.
+            </p>
+          </div>
+          <div>
+            <ul class="footer-nav">
+              <li>
+                <a href="#about-me" class="hoverable">about me</a>
+              </li>
+              <li><a href="#experience" class="hoverable">experience & certifications</a></li>
+            <li><a href="#my-project" class="hoverable">project</a></li>
+              <li><a href="#mini-project" class="hoverable">game & mini project</a></li>
+              <li>
+                <a href="#contact-me" class="hoverable">contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-divider"></div>
+        <p class="footer-copyright">
+          Copyright © Hello 2025
+        </p>
+      </footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="./main.js" defer></script>
+  </body>
+</html>
