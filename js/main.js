@@ -1,3 +1,4 @@
+import { projects, GITHUB_ICON_SVG } from "./projectData.js";
 (function () {
   "use strict";
 
@@ -463,7 +464,6 @@
       });
     });
   }
-
   // email
   function initContactForm() {
     emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
@@ -513,7 +513,60 @@
       });
     });
   }
+  // 미니 & 게임 프로젝트 카드 렌더링
+  function miniProjectList() {
+    const container = document.querySelector(".mini-project-list");
+    if (!container || !Array.isArray(projects) || projects.length === 0) return;
 
+    const fragment = document.createDocumentFragment();
+
+    projects.forEach(({ imgSrc, imgAlt, title, desc, stacks, liveUrl, codeUrl }) => {
+      const card = document.createElement("div");
+      card.className = "flip-card";
+
+      const inner = document.createElement("div");
+      inner.className = "flip-inner";
+
+      const img = Object.assign(document.createElement("img"), {
+        className: "mini-project",
+        src: imgSrc,
+        alt: imgAlt,
+      });
+
+      const flipBack = document.createElement("div");
+      flipBack.className = "flip-back";
+
+      const backContent = document.createElement("div");
+      backContent.className = "flip-back-content";
+
+      backContent.innerHTML = `
+      <div class="flip-back-title">${title}</div>
+      <div class="flip-back-desc">${desc}</div>
+      <div class="project-stack-list">
+        ${stacks.map((s) => `<span class="project-stack">${s}</span>`).join("")}
+      </div>
+      <div class="project-links">
+        <a class="hoverable" href="${liveUrl}" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-globe"></i> See live site &rarr;
+        </a>
+        ${
+          codeUrl !== "#"
+            ? ` <a class="hoverable" href="${codeUrl}" target="_blank" rel="noopener noreferrer">
+          ${GITHUB_ICON_SVG} View Code &rarr;
+        </a>`
+            : ""
+        }
+      </div>
+    `;
+
+      flipBack.appendChild(backContent);
+      inner.append(img, flipBack);
+      card.appendChild(inner);
+      fragment.appendChild(card);
+    });
+
+    container.replaceChildren(fragment);
+  }
   function debounce(fn, delay) {
     let timer;
     return (...args) => {
@@ -532,6 +585,7 @@
   );
 
   function init() {
+    miniProjectList();
     initPageLoad();
     initNav();
     drawRainCanvas();
